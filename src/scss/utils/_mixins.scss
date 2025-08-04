@@ -17,19 +17,19 @@
 
 @mixin mq($breakpoint) {
   @if $breakpoint == xs {
-    @media (max-width: 480px) {
+    @media (max-width: 30em) {
       @content;
     }
   } @else if $breakpoint == s {
-    @media (max-width: 768px) {
+    @media (max-width: 48em) {
       @content;
     }
   } @else if $breakpoint == m {
-    @media (max-width: 1024px) {
+    @media (max-width: 64em) {
       @content;
     }
   } @else if $breakpoint == l {
-    @media (max-width: 1140px) {
+    @media (max-width: 71.25em) {
       @content;
     }
   }

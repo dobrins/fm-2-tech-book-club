@@ -7,6 +7,10 @@
   column-gap: $space-150;
   justify-items: start;
 
+  img {
+    display: block;
+  }
+
   & > img:first-child {
     width: 6.875rem;
     align-self: center;
@@ -16,10 +20,6 @@
   div {
     display: flex;
     margin-bottom: $space-050;
-  }
-
-  img {
-    display: block;
   }
 
   p {
