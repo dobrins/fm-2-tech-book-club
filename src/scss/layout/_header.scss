@@ -1,0 +1,75 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.header {
+  @include bg;
+
+  padding-top: $space-400;
+  padding-bottom: $space-1000;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 35.625rem 33.75rem;
+    grid-template-rows: 2.25rem 1fr;
+    justify-content: space-between;
+    row-gap: 3.75rem;
+
+    @include mq(l) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(m) {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__content {
+    align-content: center;
+  }
+
+  &__heading {
+    @include preset(1);
+
+    background-image: $gradient-1;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: $space-300;
+
+    @include mq(l) {
+      font-size: 3rem;
+    }
+
+    @include mq(m) {
+      @include preset(1);
+    }
+
+    @include mq(s) {
+      @include preset-mobile(1);
+    }
+  }
+
+  &__btn {
+    margin-bottom: $space-250;
+  }
+
+  &__description {
+    @include preset(5);
+
+    margin-bottom: $space-400;
+  }
+
+  &__logo {
+    grid-column: 1 / -1;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    grid-column: 2 / -1;
+    border-radius: $br-8;
+
+    @include mq(m) {
+      grid-column: auto;
+    }
+  }
+}

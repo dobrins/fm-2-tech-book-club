@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Tech book club</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <img src="assets/images/logo.svg" alt="Logo" class="header__logo">
+      <div class="header__content">
+        <h1 class="header__heading">Join the ultimate tech book club</h1>
+        <p class="header__description">Turn your reading time into learning time with fellow tech enthusiasts.
+          Get curated recommendations, join vibrant discussions, and level up your
+          skills one chapter at a time.</p>
+        <a href="#membership" class="btn-primary btn-primary--arrow-down header__btn" role="button">Review membership
+          options</a>
+        <div class="testimonials">
+          <img src="assets/images/image-avatars.webp" alt="Avatars 3 people">
+          <div>
+            <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+            <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+            <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+            <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+            <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+          </div>
+          <p>200+ developers joined already</p>
+        </div>
+      </div>
+
+      <img srcset="
+            assets/images/image-hero-mobile.webp 686w,
+            assets/images/image-hero-tablet.webp 1408w,
+            assets/images/image-hero-desktop.webp 1072w
+          " sizes="(max-width: 768px) 85vw, (max-width: 1140px) 85vw, 1140px"
+        src="assets/images/image-hero-desktop.webp" alt="People" class="header__img" />
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <img srcset="
+          assets/images/image-read-together-mobile.webp 686w, 
+          assets/images/image-read-together-tablet.webp 1408w,
+          assets/images/image-read-together-desktop.webp 1120w"
+        sizes="(max-width: 768px) 85vw, (max-width: 1140px) 85vw, 1140px"
+        src="assets/images/image-read-together-desktop.webp" alt="People reading together" class="section__img" />
+      <div class="section__text">
+        <h2 class="section__heading">Read together, grow together</h2>
+        <ul class="section__list">
+          <li>Monthly curated tech reads selected by industry experts</li>
+          <li>Virtual and in-person meetups for deep-dive discussions</li>
+          <li>Early access to new tech book releases</li>
+          <li>Author Q&A sessions with tech thought leaders</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--reverse">
+      <div class="section__text">
+        <h2 class="section__heading">Not your average book <span>club</span></h2>
+        <p class="section__description">Connect with a community that speaks your language - from
+          <strong>Python</strong> to
+          <strong>TypeScript</strong> and everything in between. Our discussions blend technical depth with practical
+          applications.
+        </p>
+        <img src="assets/images/logos-tech.svg" alt="Logos - Typescript, GitHub and React" class="section__logos">
+      </div>
+      <img srcset="
+          assets/images/image-not-average-mobile.webp 686w, 
+          assets/images/image-not-average-tablet.webp 1408w,
+          assets/images/image-not-average-desktop.webp 1120w"
+        sizes="(max-width: 768px) 85vw, (max-width: 1140px) 85vw, 1140px"
+        src="assets/images/image-not-average-desktop.webp" alt="People reading together 2" class="section__img" />
+    </section>
+    <section class="journey">
+      <h2 class="journey__heading">Your tech reading journey</h2>
+      <div class="journey__steps">
+        <div class="journey__step" data-index="1">Choose your membership tier</div>
+        <div class="journey__step" data-index="2">Get your monthly book selection</div>
+        <div class="journey__step" data-index="3">Join our discussion forums</div>
+        <div class="journey__step" data-index="4">Attend exclusive meetups</div>
+      </div>
+    </section>
+    <section class="membership" id="membership">
+      <h2 class="membership__heading">Membership options</h2>
+      <div class="membership-card">
+        <h4 class="membership-card__heading">Starter</h4>
+        <div class="membership-card__price"><span>$19</span>/month</div>
+        <div class="divider"></div>
+        <ul class="membership-card__list">
+          <li>1 book/month</li>
+          <li>Online forums</li>
+        </ul>
+        <a href="#" class="btn-primary">Subscribe now</a>
+      </div>
+      <div class="membership-card membership-card--focus">
+        <h4 class="membership-card__heading">Pro</h4>
+        <div class="membership-card__price"><span>$29</span>/month</div>
+        <div class="divider"></div>
+        <ul class="membership-card__list">
+          <li>2 books/month</li>
+          <li>Virtual meetups</li>
+        </ul>
+        <a href="#" class="btn-primary">Subscribe now</a>
+      </div>
+      <div class="membership-card">
+        <h4 class="membership-card__heading">Enterprise</h4>
+        <div class="membership-card__price"><span>Custom</span></div>
+        <div class="divider"></div>
+        <ul class="membership-card__list">
+          <li>Team access</li>
+          <li>Private sessions</li>
+        </ul>
+        <a href="#" class="btn-primary">Talk to us</a>
+      </div>
+    </section>
+    <section class="testimonial">
+      <div>
+        <img src="assets/images/icon-star.svg" alt="star" width="28" height="28">
+        <img src="assets/images/icon-star.svg" alt="star" width="28" height="28">
+        <img src="assets/images/icon-star.svg" alt="star" width="28" height="28">
+        <img src="assets/images/icon-star.svg" alt="star" width="28" height="28">
+        <img src="assets/images/icon-star.svg" alt="star" width="28" height="28">
+      </div>
+      <h3 class="testimonial__text">"This book club transformed my technical reading from a solitary activity into an
+        enriching community experience. The discussions are gold!"</h3>
+      <p class="testimonial__name">Sarah Chen, Software Architect</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__container">
+      <h2 class="footer__heading">Ready to debug your reading list?</h2>
+      <a href="#membership" class="btn-alternate btn-alternate--arrow-up" role="button">Review membership options</a>
+      <div class="testimonials">
+        <img src="assets/images/image-avatars.webp" alt="Avatars 3 people">
+        <div>
+          <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+          <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+          <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+          <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+          <img src="assets/images/icon-star.svg" alt="star" width="24" height="24">
+        </div>
+        <p>200+ developers joined already</p>
+      </div>
+      <div class="footer__copy-and-social">
+        <p>© 2024 - Tech Book Club</p>
+        <div>
+          <a href="#" title="Bluesky"><img src="assets/images/logo-bluesky.svg" alt="Bluesky logo"></a>
+          <a href="#" title="Linkedin"><img src="assets/images/logo-linkedin.svg" alt="Linkedin logo"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+// @use "../base/typography" as *;
+
+@mixin btn {
+  &,
+  &:link,
+  &:visited {
+    @include preset(6);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: $space-250 $space-300;
+    display: inline-flex;
+    gap: $space-200;
+    border-radius: $br-8;
+    transition: all 0.1s;
+    background-color: $salmon-50;
+    border: $space-025 solid $neutral-900;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(s) {
+      @include preset-mobile(6);
+      gap: $space-100;
+    }
+  }
+
+  &:focus,
+  &:active {
+    outline: 2px solid currentColor;
+    outline-offset: 0.25rem;
+  }
+}
+
+.btn-primary {
+  @include btn;
+
+  &--arrow-down {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../../../assets/images/icon-arrow-down.svg);
+    }
+  }
+
+  &:hover {
+    background-image: linear-gradient(90deg, $salmon-100 0%, $salmon-50 100%);
+
+    &::after {
+      transform: translateY(1px);
+    }
+  }
+}
+
+.btn-alternate {
+  @include btn;
+
+  &,
+  &:link,
+  &:visited {
+    background-color: transparent;
+    color: $neutral-0;
+    border-color: currentColor;
+  }
+
+  &--arrow-up {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../../../assets/images/icon-arrow-up.svg);
+    }
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      90deg,
+      $neutral-700 0%,
+      $neutral-900 100%
+    );
+
+    &::after {
+      transform: translateY(-1px);
+    }
+  }
+}

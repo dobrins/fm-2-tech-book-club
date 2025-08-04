@@ -1,0 +1,145 @@
+@use "variables" as *;
+@use "sass:map";
+
+@mixin bg {
+  background-image:
+    url(../../../assets/images/pattern-light-bg.svg),
+    url(../../../assets/images/pattern-glow.svg);
+  background-position:
+    0 0,
+    30vw -3rem;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  background-color: $salmon-50;
+}
+
+// Media Queries
+
+@mixin mq($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $breakpoint == s {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == m {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == l {
+    @media (max-width: 1140px) {
+      @content;
+    }
+  }
+}
+
+// Presets Text
+
+$preset-styles: (
+  1: (
+    font-family: $font-display,
+    font-size: 3.875rem,
+    line-height: 1.2,
+    letter-spacing: -2px,
+    font-weight: 700,
+  ),
+  2: (
+    font-family: $font-display,
+    font-size: 3.125rem,
+    line-height: 1.3,
+    letter-spacing: -2px,
+    font-weight: 600,
+    color: $neutral-900,
+  ),
+  3: (
+    font-family: $font-display,
+    font-size: 2.125rem,
+    line-height: 1.3,
+    letter-spacing: -1px,
+    font-weight: 600,
+    color: $neutral-900,
+  ),
+  4: (
+    font-family: $font-display,
+    font-size: 1.5rem,
+    line-height: 1.1,
+    letter-spacing: -1px,
+    font-weight: 600,
+    color: $neutral-900,
+  ),
+  5: (
+    font-size: 1.25rem,
+    line-height: 1.4,
+    letter-spacing: -0.5px,
+    font-weight: 400,
+  ),
+  6: (
+    font-family: $font-display,
+    font-size: 1.125rem,
+    line-height: 1.3,
+    letter-spacing: -1px,
+    font-weight: 600,
+    color: $neutral-900,
+  ),
+  7: (
+    font-family: $font-display,
+    font-size: 0.875rem,
+    line-height: 1.2,
+    letter-spacing: -1px,
+    font-weight: 400,
+  ),
+);
+
+@mixin preset($n) {
+  $preset: map.get($preset-styles, $n);
+
+  @each $prop, $value in $preset {
+    #{$prop}: $value;
+  }
+}
+
+// Mobile
+
+$preset-styles-mobile: (
+  1: (
+    font-family: $font-display,
+    font-size: 2.375rem,
+    line-height: 1.2,
+    letter-spacing: -2px,
+    font-weight: 700,
+  ),
+  2: (
+    font-family: $font-display,
+    font-size: 2.125rem,
+    line-height: 1.3,
+    letter-spacing: -2px,
+    font-weight: 600,
+    color: $neutral-900,
+  ),
+  3: (
+    font-family: $font-display,
+    font-size: 1.5rem,
+    line-height: 1.1,
+    letter-spacing: -1px,
+    font-weight: 600,
+    color: $neutral-900,
+  ),
+  6: (
+    font-family: $font-display,
+    font-size: 1rem,
+    line-height: 1.3,
+    letter-spacing: -1px,
+    font-weight: 600,
+    color: $neutral-900,
+  ),
+);
+
+@mixin preset-mobile($n) {
+  $preset: map.get($preset-styles-mobile, $n);
+
+  @each $prop, $value in $preset {
+    #{$prop}: $value;
+  }
+}

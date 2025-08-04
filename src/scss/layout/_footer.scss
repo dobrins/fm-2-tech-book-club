@@ -1,0 +1,68 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.footer {
+  background-image: url(../../../assets/images/pattern-dark-bg.svg);
+  background-color: $neutral-900;
+  color: $neutral-0;
+  padding: $space-1000 0 $space-300 0;
+  text-align: center;
+  margin-top: $space-1000;
+  border-radius: $space-200 $space-200 0 0;
+
+  @include mq(m) {
+    margin-top: $space-800;
+  }
+
+  @include mq(s) {
+    padding-top: $space-600;
+  }
+
+  &__container {
+    display: grid;
+    justify-items: center;
+    gap: $space-300;
+  }
+
+  &__heading {
+    @include preset(2);
+    margin-bottom: $space-200;
+    width: 60%;
+    color: $neutral-100;
+
+    @include mq(m) {
+      width: 100%;
+    }
+
+    @include mq(s) {
+      @include preset-mobile(2);
+      color: $neutral-100;
+    }
+  }
+
+  &__copy-and-social {
+    @include preset(7);
+
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $neutral-700;
+    justify-self: stretch;
+    padding-top: $space-300;
+    margin-top: $space-500;
+    align-items: center;
+
+    @include mq(s) {
+      flex-direction: column;
+      gap: $space-200;
+    }
+
+    div {
+      display: inline-flex;
+      gap: $space-300;
+
+      @include mq(s) {
+        justify-content: center;
+      }
+    }
+  }
+}

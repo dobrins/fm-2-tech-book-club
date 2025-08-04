@@ -1,0 +1,31 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.testimonials {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: $space-150;
+  justify-items: start;
+
+  & > img:first-child {
+    width: 6.875rem;
+    align-self: center;
+    grid-row: 1 / span 2;
+  }
+
+  div {
+    display: flex;
+    margin-bottom: $space-050;
+  }
+
+  img {
+    display: block;
+  }
+
+  p {
+    @include preset(7);
+
+    grid-column: 2;
+    text-align: start;
+  }
+}

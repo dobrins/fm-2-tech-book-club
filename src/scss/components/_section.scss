@@ -1,0 +1,138 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../base/typography" as *;
+
+.section {
+  display: grid;
+  grid-template-columns: 35rem minmax(20rem, 33.125rem);
+  gap: $space-600; // 80px
+  margin-top: 7.5rem;
+  align-items: center;
+  position: relative;
+
+  &--reverse {
+    grid-template-columns: minmax(20rem, 33.125rem) 35rem;
+  }
+
+  @include mq(m) {
+    grid-template-columns: auto;
+    margin-top: $space-1000;
+  }
+
+  @include mq(s) {
+    margin-top: $space-800;
+    gap: $space-500;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    border-radius: $br-20;
+
+    @include mq(m) {
+      grid-row: 2;
+    }
+  }
+
+  &__logos {
+    position: absolute;
+    display: block;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include mq(m) {
+      left: auto;
+      right: 0;
+    }
+
+    @include mq(s) {
+      display: none;
+    }
+  }
+
+  &__heading {
+    @include preset(2);
+
+    color: $neutral-900;
+
+    @include mq(l) {
+      font-size: 2.5rem;
+    }
+
+    @include mq(m) {
+      @include preset(2);
+      width: 95%;
+    }
+
+    @include mq(m) {
+      @include preset-mobile(2);
+      width: 100%;
+    }
+
+    span {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -0.125rem;
+        left: -1rem;
+        background-image: url(../../../assets/images/pattern-circle.png);
+        background-repeat: no-repeat;
+        width: 10rem;
+        height: 4.125rem;
+
+        @include mq(m) {
+          width: 120%;
+          height: 120%;
+          background-size: contain;
+        }
+
+        @include mq(s) {
+          left: -0.125rem;
+        }
+      }
+    }
+  }
+
+  &__description {
+    @include preset(5);
+
+    margin-top: $space-300;
+  }
+
+  &__list {
+    @include preset(5);
+
+    margin-top: 2.125rem;
+    list-style: none;
+    display: grid;
+    gap: $space-300;
+    max-width: 80%;
+
+    @include mq(m) {
+      width: 100%;
+    }
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+
+    &::before {
+      content: "";
+      flex: 0 0 1.75rem;
+      display: block;
+      height: 1.75rem;
+      background-image: url(../../../assets/images/icon-check.svg);
+    }
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: $neutral-200;
+}
