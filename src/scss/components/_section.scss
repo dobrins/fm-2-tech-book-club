@@ -5,10 +5,11 @@
 .section {
   display: grid;
   grid-template-columns: 35rem minmax(20rem, 33.125rem);
-  gap: $space-600; // 80px
+  gap: $space-600;
   margin-top: 7.5rem;
   align-items: center;
   position: relative;
+  justify-content: space-between;
 
   &--reverse {
     grid-template-columns: minmax(20rem, 33.125rem) 35rem;
